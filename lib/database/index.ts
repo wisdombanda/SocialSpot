@@ -10,11 +10,11 @@ export const connectToDatabase = async () => {
   if(!MONGODB_URI) throw new Error('MONGODB_URI is missing');
 
   cached.promise = cached.promise || mongoose.connect(MONGODB_URI, {
-    dbName: 'socialspot',
+    dbName: 'socials',
     bufferCommands: false,
   })
 
   cached.conn = await cached.promise;
 
-  return cached.conn
+  return cached.conn;
 }
